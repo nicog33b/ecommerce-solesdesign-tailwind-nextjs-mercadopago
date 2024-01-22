@@ -3,7 +3,7 @@ import { GiAmpleDress } from 'react-icons/gi';
 
 const Logo = () => {
     return(
-        <div className="bg-white flex items-start logoStyle cursor-pointer shadow-sm shadow-gray-600 p-1 w-[3/12] mt-3 mb-3 hover:shadow-md transition duration-300">
+        <div className="bg-white flex items-start logoStyle cursor-pointer shadow-sm shadow-gray-600 p-1 w-[3/12] mt-3 mb-3 hover:shadow-md transition duration-300 rounded">
         <div className="text-black text-xl font-semibold hover:text-yellow-500 ">
           S
         </div>

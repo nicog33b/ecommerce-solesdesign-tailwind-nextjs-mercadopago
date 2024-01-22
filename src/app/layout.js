@@ -5,6 +5,8 @@ import MessageTop from './UI/messageTop'
 import MessageTopM from './UI/mobile/messageTopM'
 import Navbar from './UI/Navbar'
 import NavbarM from './UI/mobile/navbarM'
+import Footer from './UI/Footer'
+
 
 export const metadata = {
   title: 'SOLESDESIGN | Diseño y Confección Uruguaya',
@@ -16,11 +18,12 @@ export default function RootLayout({ children }) {
     <html>
       
       <body>
-        <MessageTop></MessageTop>
+        <MessageTopM></MessageTopM>
     
      <Navbar></Navbar>
       
         {children}
+        <Footer/>
         </body>
 
 
