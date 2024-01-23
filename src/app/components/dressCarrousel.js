@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import ProductCard from './productCard';
+import ProductCard from './cardCarrousel';
 import './dress.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,16 +8,16 @@ import "slick-carousel/slick/slick-theme.css";
 const DressCarrousel = () => {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 2,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
           dots: false,
@@ -26,8 +26,8 @@ const DressCarrousel = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
           initialSlide: 2,
         },
       },
@@ -42,9 +42,12 @@ const DressCarrousel = () => {
   };
 
   return (
-    <div className=''>
+    <div className='rounded mt-9' >
+           
       <Slider {...settings}>
+        
         <div className=''>
+          
           <h3><ProductCard></ProductCard></h3>
         </div>
         <div>
