@@ -10,7 +10,7 @@ const ProductCard = () => {
   return (
     <div className="mr-2 ml-2">
       <div className="flex items-center justify-center">
-        <div className="max-w-sm max-h-sm py-2">
+        <div className="w-full h-full py-2">
           <div
             className={`bg-yellow-500 relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg ${
               isHovered ? "hovered" : ""
@@ -19,10 +19,10 @@ const ProductCard = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             <Image
-              className="rounded-t-lg"
+              className="rounded-t-lg w-full "
               src={isHovered ? "/primera-verano/vestidoGipsy1.png" : "/primera-verano/vestidoGipsy.png"}
-              width={350}
-              height={200}
+              width={330}
+              height={222}
             />
             <div className="py-3 px-4 rounded-lg bg-white my flex justify-between items-center">
               <h1 className="text-center font-bold text-black shadow-gray-300 border-1 border-black ">
