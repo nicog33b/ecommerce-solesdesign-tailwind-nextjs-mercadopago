@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import ProductCard from "./ProductCard"; // Importa tu componente ProductCard
-import Shop from './shop';
+
 
 const Shop = ({ productos }) => {
   const [filtro, setFiltro] = useState("");
