@@ -17,10 +17,10 @@ const Navbar = () => {
       <nav className="nav flex font-semibold text-lg ml-2 " >
         <ul className=" flex items-center">
           <li className="buttonNav border-b-2  p-2 opacity-[50%] border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-[100%] duration-200 cursor-pointer active">
-            <a href="" className="buttonNav text-black">Inicio</a>
+            <a href="/" className="buttonNav text-black">Inicio</a>
           </li>
           <li className="buttonNav border-b-2  p-2 opacity-[50%] border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-[100%] duration-200 cursor-pointer">
-            <a href="" className="buttonNav text-black">Tienda</a>
+            <a href="/tienda" className="buttonNav text-black">Tienda</a>
           </li>
          
          {/*     

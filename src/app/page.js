@@ -15,7 +15,7 @@ export default function Home() {
     <ShopNowButton></ShopNowButton>
     
 
-    <hr className="text-white mb-6" ></hr>
+    <hr className="bg-black mb-6" ></hr>
    </div>
 
 

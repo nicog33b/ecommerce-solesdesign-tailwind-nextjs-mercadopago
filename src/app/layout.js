@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       
-      <body>
+      <body className='bg-black'>
         <MessageTopM></MessageTopM>
     
      <Navbar></Navbar>
