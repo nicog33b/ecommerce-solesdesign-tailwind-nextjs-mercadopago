@@ -1,15 +1,23 @@
 'use client';
+
 import React from 'react'
-import ShopCard from '../components/tienda/shopCard'; 
+
 import ProductGrid from '../components/tienda/productGrid'
+import FiltroShop from '../components/tienda/filtroShop';
+import TitleShop from '../components/tienda/titleShop';
+
+
 const Tienda  =() => {
 
 return(
 
     <div className=''>
+    
+    <FiltroShop/>
 
-
-    <ProductGrid></ProductGrid>
+    <TitleShop/>
+  
+    <ProductGrid/>
   
     </div>
 )

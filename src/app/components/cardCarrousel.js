@@ -20,7 +20,7 @@ const ProductCard = () => {
           >
             <Image
               className="rounded-t-lg w-full "
-              src={isHovered ? "/primera-verano/vestidoGipsy1.png" : "/primera-verano/vestidoGipsy.png"}
+              src={isHovered ? "/primavera-verano/vestidoGipsy1.png" : "/primavera-verano/vestidoGipsy.png"}
               width={330}
               height={222}
             />
