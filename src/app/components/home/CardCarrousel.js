@@ -24,7 +24,7 @@ const ImprovedProductCard = ({ prenda }) => {
         <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
           <div className="text-white text-center">
             <h1 className="font-bold text-lg">{prenda.nombre}</h1>
-            <p className="mt-2">${prenda.precio}</p>
+            <p className="mt-2">  <span className="text-green-500">$</span>{prenda.precio}</p>
           </div>
         </div>
       </div>
