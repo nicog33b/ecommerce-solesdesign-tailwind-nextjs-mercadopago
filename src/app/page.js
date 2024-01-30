@@ -1,6 +1,6 @@
 'use client';
 import React from "react"
-import DressCarrousel from "./components/dressCarrousel"
+import DressCarrousel from "./components/DressCarrousel"
 import HomeCarousel from "./components/home/titleCarrousel";
 import ShopNowButton from "./components/home/showNowButton";
 

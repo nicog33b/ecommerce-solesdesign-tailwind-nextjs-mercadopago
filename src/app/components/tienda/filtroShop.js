@@ -27,7 +27,7 @@ const FiltroShop = ({ onFiltroChange }) => {
     </div>
     <select id="pricingType" name="pricingType"
 		className="w-full h-10 border-2 border-white focus:outline-none focus:border-yellow-500 text-black rounded px-2 md:px-3 py-0 md:py-1 tracking-wider">
-		<option value="id1" selected="">Primera-Verano</option>
+		<option value="todos">Primera-Verano</option>
 		<option value="Freemium">Primera-Verano</option>
 		<option value="Free">Free</option>
 		<option value="Paid">Paid</option>

@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import ProductGrid from '../components/tienda/productGrid'
-import FiltroShop from '../components/tienda/filtroShop';
-import TitleShop from '../components/tienda/titleShop';
+import ProductGrid from '../components/tienda/GridProduct'
+import FiltroShop from '../components/tienda/FiltroShop';
+import TitleShop from '../components/tienda/TitleShop';
 
 
 const Tienda  =() => {

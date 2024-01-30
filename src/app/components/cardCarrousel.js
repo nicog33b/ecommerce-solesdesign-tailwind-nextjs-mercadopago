@@ -20,7 +20,7 @@ const ProductCard = () => {
           >
             <Image
               className="rounded-t-lg w-full "
-              src={isHovered ? "/primavera-verano/vestidoGipsy1.png" : "/primavera-verano/vestidoGipsy.png"}
+              src={isHovered ? "/primavera-verano/vestidoGypsy1.png" : "/primavera-verano/vestidoGypsy.png"}
               width={330}
               height={222}
             />
@@ -29,13 +29,14 @@ const ProductCard = () => {
                 Vestido Gipsy de porcelana rosa
               </h1>
 
-              <button className="m-0 py-2 px-1 mr-1 bg-blue-300 hover:bg-yellow-500 hover:text-white text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300 w-3/12">
-                <BsCart4 className="h-6 w-6 font-bold text-blue-500 text-center mx-auto my-auto hover:text-blue-700"></BsCart4>
-              </button>
-
-              <button className="m-0 ml-1 py-2 px-1 text-center bg-blue-300 hover:bg-yellow-500 hover:text-white text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300 w-3/12">
-                <FaRegEye className="h-6 w-6 font-bold text-lime-900 hover:text-green-500 mx-auto my-auto"></FaRegEye>
-              </button>
+              <div className="ml-auto flex items-center space-x-4">
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer">
+                <BsCart4 className="h-6 w-6 font-bold text-blue-500 hover:text-blue-700" />
+              </div>
+              <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer">
+                <FaRegEye className="h-6 w-6 font-bold text-lime-900 hover:text-green-500" />
+              </div>
+            </div>
             </div>
             <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
               <span className="text-md text-black text-lg font-bold shadow-yellow-200">
