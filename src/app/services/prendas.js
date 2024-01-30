@@ -15,11 +15,21 @@ export const getAllPrendas = async () => {
   return handleResponse(response);
 };
 
+
+
 // Obtener una prenda por ID
 export const getPrendaById = async (id) => {
   const response = await fetch(`${API_URL}/${id}`);
   return handleResponse(response);
 };
+
+// Obtener todas las prendas de Primavera-Verano
+export const getPrimaveraVeranoPrendas = async () => {
+  const allPrendas = await getAllPrendas();
+  const primaveraVeranoPrendas = allPrendas.filter(prenda => prenda.epoca === 'Primavera-Verano');
+  return primaveraVeranoPrendas;
+};
+
 
 // Crear una nueva prenda
 export const createPrenda = async (prendaData) => {

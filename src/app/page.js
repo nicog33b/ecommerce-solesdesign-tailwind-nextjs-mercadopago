@@ -1,6 +1,6 @@
 'use client';
 import React from "react"
-import DressCarrousel from "./components/DressCarrousel"
+import DressCarrousel from "./components/home/DressCarrousel"
 import HomeCarousel from "./components/home/titleCarrousel";
 import ShopNowButton from "./components/home/showNowButton";
 
@@ -13,8 +13,6 @@ export default function Home() {
    <HomeCarousel></HomeCarousel>
     <DressCarrousel></DressCarrousel>
     <ShopNowButton></ShopNowButton>
-    
-
     <hr className="bg-black mb-6" ></hr>
    </div>
 
