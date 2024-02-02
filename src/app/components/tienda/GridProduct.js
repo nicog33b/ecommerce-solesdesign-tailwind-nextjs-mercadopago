@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ShopCard from './ShopCard';
+import ShopCard from './shopCard';
 import { getAllPrendas } from '@/app/services/prendas';
 
 const ProductGrid = () => {
@@ -45,6 +45,7 @@ const ProductGrid = () => {
       {!loading && prendas.map((prenda) => (
         <ShopCard
           key={prenda._id}
+          _id={prenda._id}
           precio={prenda.precio}
           nombre={prenda.nombre}
           material={prenda.material}

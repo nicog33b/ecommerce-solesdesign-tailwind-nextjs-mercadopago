@@ -2,11 +2,18 @@ import React from 'react';
 import Image from 'next/image';
 import { BsCart4 } from 'react-icons/bs';
 import { FaRegEye } from 'react-icons/fa6';
+import { createCartIfNotExists, addItemToCart } from '@/app/services/cart';
 
-const ShopCard = ({ precio, nombre, material, precioAntes, imagenes }) => {
+const ShopCard = ({ _id,precio, nombre, material, precioAntes, imagenes }) => {
+
+const addToCart = () =>{
+createCartIfNotExists();
+addItemToCart(_id,precio, nombre, material, precioAntes, imagenes);
+
+}
+
   return (
     <div className="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-      <a href="#">
         {imagenes && imagenes.length > 0 && (
           <Image
             src={imagenes[0].url}
@@ -27,16 +34,15 @@ const ShopCard = ({ precio, nombre, material, precioAntes, imagenes }) => {
               <p className="text-sm text-gray-600 cursor-auto ml-2">{precioAntes}</p>
             </del>
             <div className="ml-auto flex items-center space-x-4">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200">
-                <BsCart4 className="h-6 w-6 font-bold text-blue-500 hover:text-blue-700" />
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer">
+                <BsCart4 className="h-6 w-6 font-bold text-blue-500 hover:text-blue-700" onClick={addToCart} />
               </div>
-              <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200">
+              <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer">
                 <FaRegEye className="h-6 w-6 font-bold text-lime-900 hover:text-green-500" />
               </div>
             </div>
           </div>
         </div>
-      </a>
     </div>
   );
 };

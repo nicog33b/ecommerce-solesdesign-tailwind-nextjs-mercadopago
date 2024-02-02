@@ -15,8 +15,6 @@ export const getAllPrendas = async () => {
   return handleResponse(response);
 };
 
-
-
 // Obtener una prenda por ID
 export const getPrendaById = async (id) => {
   const response = await fetch(`${API_URL}/${id}`);
