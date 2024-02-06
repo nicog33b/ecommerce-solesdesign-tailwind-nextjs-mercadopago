@@ -5,6 +5,7 @@
 export const createCartIfNotExists = () => {
     // Obtener el carrito del localStorage
     const storedCart = localStorage.getItem('userCart');
+
     if (!storedCart) {
       // Si no hay carrito almacenado, inicializar un nuevo carrito
       const newCart = [];
@@ -33,14 +34,14 @@ export const cartUpDataAndCheckout = () => {
   };
 
 
-  export const addItemToCart = (_id, precio, nombre, material, precioAntes, imagenes) => {
+  export const addItemToCart = (_id, precio, nombre, material, precioAntes, imagenes, cantidad) => {
        // Obtener el carrito del localStorage
        const storedCart = localStorage.getItem('userCart');
     // Crear un objeto con los datos proporcionados
     const newItem = {
       _id,
       precio,
-      cantidad:1,
+      cantidad,
       nombre,
       material,
       precioAntes,
@@ -79,7 +80,3 @@ export const cartUpDataAndCheckout = () => {
   };
 };
 
-export const UpdateCartCardsAndPrice = () => {
- 
-
-};

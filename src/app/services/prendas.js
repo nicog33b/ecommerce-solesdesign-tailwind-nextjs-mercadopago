@@ -60,3 +60,4 @@ export const deletePrenda = async (id) => {
   });
   return handleResponse(response);
 };
+
