@@ -78,14 +78,17 @@ const ShopCard = ({ _id, precio, nombre, material, precioAntes, imagenes }) => {
               <p className="text-sm text-gray-600 cursor-auto ml-2">{precioAntes}</p>
             </del>
             <div className="ml-auto flex items-center space-x-4">
-              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer">
-                <BsCart4 className="h-6 w-6 font-bold text-blue-500 hover:text-blue-700" onClick={addToCart} />
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer" onClick={addToCart}>
+                <BsCart4 className="h-6 w-6 font-bold text-blue-500 hover:text-blue-700" />
               </div>
-              <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer">
-                <Link href='/productReview'>
-                <FaRegEye className="h-6 w-6 font-bold text-lime-900 hover:text-green-500" onClick={()=>{localStorage.setItem('selectedId',_id)}} />
-                </Link>
+
+              <Link href='/productReview'>
+              <div className="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer" onClick={()=>{localStorage.setItem('selectedId',_id)}}>
+                <FaRegEye className="h-6 w-6 font-bold text-lime-900 hover:text-green-500"  />
               </div>
+              </Link>
+
+              
             </div>
           </div>
         </div>

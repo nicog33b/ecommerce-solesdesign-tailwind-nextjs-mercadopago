@@ -70,14 +70,16 @@ const ImprovedProductCard = ({ prenda }) => {
         <div className="flex justify-between items-center mb-2">
           <div className="font-bold text-lg">{prenda.nombre}</div>
           <div className="flex space-x-2">
-            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer">
-              <BsCart4 className="h-5 w-5 text-blue-500 hover:text-blue-700" onClick={addToCart}/>
+            <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 cursor-pointer" onClick={addToCart}>
+              <BsCart4 className="h-5 w-5 text-blue-500 hover:text-blue-700"/>
             </div>
-            <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer">
+
             <Link href='/productReview'>
+            <div className="w-8 h-8 bg-lime-100 rounded-full flex items-center justify-center hover:bg-green-200 cursor-pointer">
               <FaRegEye className="h-5 w-5 text-lime-900 hover:text-green-500" onClick={()=>{localStorage.setItem('selectedId',prenda._id)}} />
-              </Link>
             </div>
+            </Link>
+
           </div>
         </div>
         <p className="text-sm text-gray-600">{prenda.descripcion}</p>

@@ -14,9 +14,12 @@ const CheckoutCart = () => {
     const [cartItems, setCartItems] = useState([]);
     const [subtotalPrice, setSubtotalPrice] = useState(0);
     const [preferenceId, setPreferenceId] = useState(null);
+    const [showItems, setShowItems] = useState(true); // Nuevo estado para controlar la visibilidad de la sección de elementos
+    const [purchaseCompleted, setPurchaseCompleted] = useState(false);
+
 
      //MERCADOPAGO ZONE
-     initMercadoPago('APP_USR-d34b09e0-71e5-4341-8093-651811dc1fa5', {
+     initMercadoPago('APP_USR-e86b5dd8-20ac-49cf-8832-832456ab65e9', {
         locale: "es-UY"
       });
       
@@ -54,12 +57,17 @@ const CheckoutCart = () => {
           const id = await createPreference();
           if (id) {
             setPreferenceId(id);
+            // Ocultar la sección de elementos después de realizar la compra
+            setShowItems(false);
+            // Establecer purchaseCompleted a true
+            setPurchaseCompleted(true);
           }
         } catch (error) {
           console.error('Error creating preference:', error);
-          console.log(id)
         }
       };
+      
+  
       
 
     const handleQuantityChangeLocal = (_id, newQuantity) => {
@@ -133,7 +141,7 @@ const CheckoutCart = () => {
           <div className="container mx-auto px-4">
             <h1 className="text-3xl font-serif mb-4 text-black">Carrito de compras</h1>
             <div className="flex flex-col md:flex-row gap-4">
-              <div className="md:w-3/4">
+            <div className={`md:w-3/4 ${showItems ? '' : 'hidden'}`}>
                 <div className="bg-white rounded-lg shadow-md p-6 mb-4 overflow-x-auto">
                 <table className="w-full">
                 <thead>
@@ -177,7 +185,10 @@ const CheckoutCart = () => {
 
 
 
-                  <button className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={handleBuy}>Finalizar compra</button>
+                  <button className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={purchaseCompleted ? () => window.location.reload() : handleBuy}>
+  {purchaseCompleted ? 'Volver al carrito' : 'Finalizar compra'}
+</button>
+
                   {preferenceId && <Wallet initialization={{ preferenceId }} />}
 
 
@@ -188,6 +199,8 @@ const CheckoutCart = () => {
 
                 </div>
               </div>
+
+              
             </div>
           </div>
         </div>
