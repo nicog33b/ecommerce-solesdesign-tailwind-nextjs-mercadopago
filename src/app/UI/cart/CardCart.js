@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const CardCart = ({ _id, precio, nombre, material, precioAntes, imagenes, quantity, onRemove, quantityChange }) => {
-  const cantidadOptions = Array.from({ length: 10 }, (_, i) => i + 1);
+  const cantidadOptions = Array.from({ length:3 }, (_, i) => i + 1);
   const [actualQuantity, setActualQuantity] = useState(quantity);
 
   const updateQuantity = () => {

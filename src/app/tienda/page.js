@@ -1,26 +1,38 @@
 'use client';
-
-import React from 'react'
-
-import ProductGrid from '../components/tienda/GridProduct'
+import React, { useState, useEffect } from 'react';
 import FiltroShop from '../components/tienda/FiltroShop';
 import TitleShop from '../components/tienda/TitleShop';
+import ProductGrid from '../components/tienda/GridProduct';
 
+const Tienda = () => {
+  // Estado local para mantener los filtros seleccionados
+  const [epoca, setEpoca] = useState('Todos');
+  const [searchText, setSearchText] = useState('');
 
-const Tienda  =() => {
+  useEffect(() => {
+    // Log the initial value of selectedEpoca
+    console.log('Initial selectedEpoca:', epoca);
+  }, [epoca]);
+  // Función para manejar cambios en los filtros
+  const handleEpocaChange = (nuevaEpoca) => {
+    setEpoca(nuevaEpoca);
+  };
 
-return(
+  const handleSearchTextChange = (newSearch) => {
+    setSearchText(newSearch);
+  };
 
+  return (
     <div className=''>
-    
-    <FiltroShop/>
+      {/* Paso de estado y función de cambio a FiltroShop */}
+      <FiltroShop onFiltroChange={handleEpocaChange} searchTextChange={handleSearchTextChange} />
 
-    <TitleShop/>
-  
-    <ProductGrid/>
-  
+      <TitleShop />
+
+      {/* Paso de filtros a ProductGrid */}
+      <ProductGrid  selectedEpoca={epoca} search={searchText} />
     </div>
-)
-}
+  );
+};
 
 export default Tienda;

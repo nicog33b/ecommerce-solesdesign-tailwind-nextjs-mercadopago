@@ -15,6 +15,22 @@ export const getAllPrendas = async () => {
   return handleResponse(response);
 };
 
+
+// Obtener todas las épocas únicas
+export const getAllEpocas = async () => {
+  const allPrendas = await getAllPrendas();
+
+  const epocasUnicas = [];
+  allPrendas.forEach((prenda) => {
+    if (prenda.epoca && !epocasUnicas.includes(prenda.epoca)) {
+      epocasUnicas.push(prenda.epoca);
+    }
+  });
+
+  return epocasUnicas; // Puedes devolver el array de épocas si lo necesitas en otro lugar
+};
+
+
 // Obtener una prenda por ID
 export const getPrendaById = async (id) => {
   const response = await fetch(`${API_URL}/${id}`);

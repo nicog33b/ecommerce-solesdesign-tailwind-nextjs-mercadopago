@@ -14,7 +14,7 @@ const ProductRow = ({ imageUrl, productName, price, initialQuantity, total, onRe
   }, [quantity, price]);
 
   const handleIncrement = () => {
-    if (quantity < 10) {
+    if (quantity < 3) {
       setQuantity(quantity + 1);
       onQuantityChange(quantity + 1); // Llamar a la función de cambio de cantidad en CheckoutCart
     }
