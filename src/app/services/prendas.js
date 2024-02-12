@@ -1,5 +1,5 @@
 // services/prendas.js
-const API_URL = 'http://localhost:3005/shop/prendas';
+const API_URL = 'vps-3732767-x.dattaweb.com:85/shop/prendas';
 
 
 // Función para manejar el fetch y devolver datos en formato JSON
@@ -12,7 +12,7 @@ const handleResponse = (response) => {
 
 // Obtener todas las prendas
 export const getAllPrendas = async () => {
-  const response = await fetch(API_URL);
+  const response = await fetch(API_URL ,{ mode: 'no-cors' });
   return handleResponse(response);
 };
 
