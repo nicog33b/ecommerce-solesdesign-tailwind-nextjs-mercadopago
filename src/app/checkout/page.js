@@ -27,7 +27,7 @@ const CheckoutCart = () => {
     
       const createPreference = async () => {
         try {
-          const response = await fetch('http://localhost:3004/mercadopago/create-preference', {
+          const response = await fetch('http://vps-3732767-x.dattaweb.com:85/mercadopago/create-preference', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
