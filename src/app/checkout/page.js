@@ -27,7 +27,7 @@ const CheckoutCart = () => {
     
       const createPreference = async () => {
         try {
-          const response = await fetch('http://localhost:3000/mercadopago/create-preference', {
+          const response = await fetch('http://localhost:3004/mercadopago/create-preference', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

@@ -1,5 +1,6 @@
 // services/prendas.js
-const API_URL = 'http://localhost:3000/shop/prendas';
+const API_URL = 'http://localhost:3005/shop/prendas';
+
 
 // Función para manejar el fetch y devolver datos en formato JSON
 const handleResponse = (response) => {

@@ -14,6 +14,7 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  require('dotenv').config();
   return (
     <html>
       
