@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import FiltroShop from '../components/tienda/FiltroShop';
+import FiltroShop from '../components/tienda/filtroshop';
 import TitleShop from '../components/tienda/TitleShop';
 import ProductGrid from '../components/tienda/GridProduct';
 
