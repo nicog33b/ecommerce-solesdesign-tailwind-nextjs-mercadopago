@@ -14,9 +14,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  require('dotenv').config();
+
   return (
-    <html>
+    <html >
       
       <body className='bg-black'>
         <MessageTopM></MessageTopM>
