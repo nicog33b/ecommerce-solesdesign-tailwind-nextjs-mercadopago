@@ -1,5 +1,5 @@
 // services/prendas.js
-const API_URL = 'http://solesdesign.store:85/shop/prendas';
+const API_URL = 'https://api.solesdesign.store/shop/prendas';
 
 
 // Función para manejar el fetch y devolver datos en formato JSON

@@ -60,8 +60,8 @@ const ShopCard = ({ _id, precio, nombre, material, precioAntes, imagenes }) => {
             src={imagenes[0].url}
             alt="Product"
             className="h-80 w-72 object-cover rounded-t-xl cursor-pointer"
-            width={600}
-            height={600}
+            width={300}
+            height={300}
           />
           </Link>
    
