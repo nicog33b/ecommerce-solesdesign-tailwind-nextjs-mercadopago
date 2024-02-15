@@ -29,7 +29,7 @@ const ProductReview = () => {
     imagenes: {},
   });
 
-  const [cantidad, setCantidad] = useState();
+  const [cantidad, setCantidad] = useState(1);
 
   const selectedId = typeof window !== 'undefined' ? localStorage.getItem('selectedId') : null;
 

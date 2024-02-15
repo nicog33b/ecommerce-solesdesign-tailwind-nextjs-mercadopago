@@ -81,11 +81,11 @@ const ProductGrid = ({ selectedEpoca, search }) => {
 )}
 </div>
 
-<div className='w-full mt-[9rem] flex justify-center items-center'>
+<div className='w-full mt-[3.9rem] mb[12rem] flex justify-center items-center'>
 {!loading && visibleItems < prendas.length && (
   <button
     onClick={handleLoadMore}
-    className="text-white bg-yellow-500 py-2 px-4 mt-4"
+    className="text-white bg-yellow-500 py-2 px-4 mt-2"
   >
     Ver Más
   </button>
