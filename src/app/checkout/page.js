@@ -16,10 +16,11 @@ const CheckoutCart = () => {
     const [preferenceId, setPreferenceId] = useState(null);
     const [showItems, setShowItems] = useState(true); // Nuevo estado para controlar la visibilidad de la sección de elementos
     const [purchaseCompleted, setPurchaseCompleted] = useState(false);
-
+    const API_MPAGO = process.env.NEXT_PUBLIC_API_MPAGO;
+    const MPAGO_KEY = process.env.NEXT_PUBLIC_MPAGO_KEY;
 
      //MERCADOPAGO ZONE
-     initMercadoPago('APP_USR-e86b5dd8-20ac-49cf-8832-832456ab65e9', {
+     initMercadoPago( MPAGO_KEY, {
         locale: "es-UY"
       });
       
@@ -27,7 +28,7 @@ const CheckoutCart = () => {
     
       const createPreference = async () => {
         try {
-          const response = await fetch('https://api.solesdesign.store/mercadopago/create-preference', {
+          const response = await fetch(API_MPAGO, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

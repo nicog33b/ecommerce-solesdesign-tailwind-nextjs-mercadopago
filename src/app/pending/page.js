@@ -20,8 +20,7 @@ const Pending = () => {
     
   return (
     <div className='mt-6 mb-6 text-center bg-yellow-200 p-4 rounded-lg'>
-      <p className='font-serif text-2xl text-black text-center'>¡Compra en proceso!</p>
-      <p className='text-gray-600 mt-2 text-center'>Verifica tu metodo de pago.</p>
+      <p className='font-serif text-2xl text-black text-center'>¡Tu pago ah quedado pendiente!</p>
       <p className='text-gray-600 mt-2 text-center'>
        Si crees que no es un problema tuyo, comunicate con sole para ver si podemos arreglar tu problema!
       </p>

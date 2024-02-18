@@ -1,8 +1,7 @@
-const result = require('dotenv').config();
+// next.config.js
+const dotenv = require('dotenv');
+dotenv.config();
 
-if (result.error) {
-  throw result.error;
-}
 
 const nextConfig = {};
 

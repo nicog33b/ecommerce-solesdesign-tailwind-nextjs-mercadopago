@@ -1,6 +1,7 @@
-// services/prendas.js
-const API_URL = 'https://api.solesdesign.store/shop/prendas';
 
+const API_URL = process.env.NEXT_PUBLIC_API_KEY;
+
+// Resto del código
 
 // Función para manejar el fetch y devolver datos en formato JSON
 const handleResponse = (response) => {
@@ -10,7 +11,6 @@ const handleResponse = (response) => {
   return response.json();
 };
 
-// Obtener todas las prendas
 export const getAllPrendas = async () => {
   const response = await fetch(API_URL);
   return handleResponse(response);
