@@ -75,6 +75,7 @@ const ProductGrid = ({ selectedEpoca, search }) => {
         material={prenda.material}
         precioAntes={prenda.precioAntes}
         imagenes={prenda.imagenes}
+        epoca={prenda.epoca}
       />
     ))}
   </div>

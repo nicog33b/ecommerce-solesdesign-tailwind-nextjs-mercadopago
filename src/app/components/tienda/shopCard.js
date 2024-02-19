@@ -34,7 +34,7 @@ const ShopCard = ({ _id, precio, nombre, material, precioAntes, imagenes }) => {
       });
     } else {
       const cantidad =1;
-      addItemToCart(_id, precio, nombre, material, precioAntes, imagenes, cantidad);
+      addItemToCart(_id, precio, nombre, material, precioAntes, imagenes, cantidad, epoca);
       Swal.fire({
         icon: 'success',
         title: 'Producto agregado al carrito',
@@ -68,7 +68,6 @@ const ShopCard = ({ _id, precio, nombre, material, precioAntes, imagenes }) => {
         )}
 
         <div className="px-4 py-3 w-72">
-          <span className="text-gray-400 mr-3 uppercase text-xs">{material}</span>
           <p className="text-lg font-bold text-black truncate block capitalize">{nombre}</p>
           <div className="flex items-center">
             <p className="text-lg font-semibold text-black cursor-auto my-3">
