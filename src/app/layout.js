@@ -9,27 +9,27 @@ import Footer from './UI/Footer'
 
 
 export const metadata = {
-  title: 'Solesdesign | Diseño con identidad única ',
-  description: 'Piezas únicas, conexión y esencia. Descubre nuestra colección exclusiva de moda uruguaya. Blazers, Conjuntos, Camisa, Pantalon, Lino, Algodón, prendas 100% hechas a mano. ',
-  keywords: 'prendas hechas a mano, ropa hecha a mano, ropa de diseño, diseñadora de moda, ropa uruguay, ropa a medida, coleccion de diseño, piezas unicas de diseño, camisa, blazers, conjuntos, camisas, pantalon ,lino, exclusivo',
-  author: '094272390 - Crea tu pagina web con nosotros. ',
-  image: '',
+  title: 'Solesdesign | Moda Única y Hecha a Mano',
+  description: 'Descubre moda uruguaya única y hecha a mano. Blazers, conjuntos y más. Conexión y esencia en cada pieza.',
+  keywords: 'moda uruguaya, ropa hecha a mano, diseño exclusivo, prendas a medida, blazers, conjuntos, camisas, lino, algodón, exclusivo',
+  author: 'Nicolás García, @tuweb_cuantica',
+  image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuX8cO41QDGwJuXhUNtZtqk9dCeI5Y4mwdhNMPPCBgZQ&s',
   url: 'https://www.solesdesign.store',
   type: 'website',
   locale: 'es_UY', // Código de idioma y país (ejemplo: es_UY para español de Uruguay)
   siteName: 'Solesdesign',
-  facebookAppId: 'https://www.facebook.com/Tiendasoles.uy',
   robots: 'index, follow', // Directivas de robots (indexar y seguir)
   og: {
-    title: 'Solesdesign| Diseño con identidad única ',
-    description: 'Piezas únicas, conexión y esencia. Descubre nuestra colección exclusiva de moda uruguaya. Blazers, Conjuntos, Camisa, Pantalon, Lino, Algodón, prendas 100% hechas a mano. ',
+    title: 'Solesdesign | Moda Única y Hecha a Mano',
+    description: 'Descubre moda uruguaya única y hecha a mano. Blazers, conjuntos y más. Conexión y esencia en cada pieza.',
     type: 'website',
     url: 'https://www.solesdesign.store',
     siteName: 'Solesdesign',
-    image: '',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuX8cO41QDGwJuXhUNtZtqk9dCeI5Y4mwdhNMPPCBgZQ&s',
     locale: 'es_UY', // Código de idioma y país (ejemplo: es_UY para español de Uruguay)
   },
 };
+
 
 
 export default function RootLayout({ children }) {
