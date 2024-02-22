@@ -1,5 +1,26 @@
 
 
+const generateRandomToken = () => {
+  return Math.random().toString(36).substring(2, 12) + Math.random().toString(36).substring(2, 12);
+};
+
+export const generateBuyCredentials = () => {
+  // Generar un token aleatorio
+  const randomToken = generateRandomToken();
+
+  // Almacenar el token en localStorage con la clave "btoken"
+  localStorage.setItem('btoken', randomToken);
+
+
+};
+
+
+export const clearCredentials = () => {
+  
+  localStorage.removeItem('btoken');
+  localStorage.removeItem('compraProcesada');
+  
+}
 
 // Función para crear el carrito si no existe
 export const createCartIfNotExists = () => {

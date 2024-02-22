@@ -7,7 +7,9 @@ import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
 
 
 
-import { handleRemoveClick } from '../services/cart';
+import { clearCredentials, generateBuyCredentials, handleRemoveClick,  } from '../services/cart';
+
+
 const CheckoutCart = () => {
 
     //useState
@@ -23,7 +25,6 @@ const CheckoutCart = () => {
      initMercadoPago( MPAGO_KEY, {
         locale: "es-UY"
       });
-      
 
     
       const createPreference = async () => {
@@ -54,6 +55,7 @@ const CheckoutCart = () => {
       
       
       const handleBuy = async () => {
+        generateBuyCredentials();
         try {
           const id = await createPreference();
           if (id) {
@@ -108,10 +110,18 @@ const CheckoutCart = () => {
         // Actualizar el estado del subtotalPrice
         setSubtotalPrice(subtotal);
       };
+
+   
+
+
     
       // Llamar a la función al montar el componente o cuando cambie el carrito
       useEffect(() => {
+
         calculateSubTotalPrice();
+        clearCredentials();
+
+
       }, []); // El array vacío asegura que se ejecute solo al montar el componente
     
     
@@ -182,12 +192,12 @@ const CheckoutCart = () => {
                 <span className="font-semibold">${(subtotalPrice + 0.00).toFixed(2)}</span>
               </div>
 
-              <button className="bg-green-600  text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={purchaseCompleted ? () => window.location.reload() : handleBuy}>
+              <button  className="bg-green-600  text-white py-2 px-4 rounded-lg mt-4 w-full" onClick={purchaseCompleted ? () => window.location.reload() : handleBuy}>
                 {purchaseCompleted ? 'Seguir comprando' : 'Finalizar compra'}
               </button>
                 
               <div className='w-full items-center'>
-              {preferenceId && <Wallet initialization={{ preferenceId }} />}
+              {preferenceId && <Wallet  initialization={{ preferenceId }} />}
               </div>
 
             </div>

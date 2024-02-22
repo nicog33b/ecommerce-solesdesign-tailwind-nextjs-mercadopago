@@ -14,7 +14,7 @@ import QuantitySelector from '../components/productReview/quantity';
 
 //extern function
 import { getPrendaById } from '../services/prendas';
-import { addItemToCart } from '../services/cart';
+import { addItemToCart, clearCredentials } from '../services/cart';
 import { createCartIfNotExists } from '../services/cart';
 
 
@@ -35,6 +35,7 @@ const ProductReview = () => {
 
 
   useEffect(() => {
+    clearCredentials();
 
     getPrendaById(selectedId)
       .then(itemDetails => {

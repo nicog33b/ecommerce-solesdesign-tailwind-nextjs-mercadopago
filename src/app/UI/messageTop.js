@@ -8,7 +8,7 @@ const MessageTop = () => {
   return (
     <div className="colorPrincipal text-white text-center h-12 border-b-2  border-x-slate-400 ">
       <p className="colorText flex items-center justify-center h-full text-lg font-semibold  tracking-wide ">
-      <FaTruckFast className="text-white mr-1" /> ENVÍOS DESDE SALINAS A TODO EL MUNDO  <BiWorld className="text-white ml-1"/>
+      <FaTruckFast className="text-white mr-1" />COMPRAS MAYORES A $5000UYU ENVÍO GRATIS <BiWorld className="text-white ml-1"/>
 
       </p>
     </div>

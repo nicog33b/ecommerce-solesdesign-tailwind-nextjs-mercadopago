@@ -1,5 +1,6 @@
 'use client';
 import React, {useState} from "react";
+import Link from 'next/link'
 
 //components
 import ShoppingCart from "./Cart";
@@ -12,6 +13,7 @@ import './ui.css';
 
 //icons
 import { FaUser, FaShoppingCart, FaStar } from 'react-icons/fa';
+
 
 
 const Navbar = () => {
@@ -38,13 +40,17 @@ const [isCartOpen, setIsCartOpen] = useState(false);
       {/* NAVIGATION */}
       <nav className="nav flex font-semibold text-lg ml-2 " >
         <ul className=" flex items-center">
+        <Link href="/">
           <li className="buttonNav border-b-2  p-2 opacity-[50%] border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-[100%] duration-200 cursor-pointer active">
-            <a href="/" className="buttonNav text-black">Inicio</a>
+            <p className="buttonNav text-black">Inicio</p>
           </li>
+          </Link>
+
+          <Link href="/tienda">
           <li className="buttonNav border-b-2  p-2 opacity-[50%] border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-[100%] duration-200 cursor-pointer">
-            <a href="/tienda" className="buttonNav text-black">Tienda</a>
+            <p className="buttonNav text-black">Tienda</p>
           </li>
-         
+          </Link>
          {/*     
           <li className="buttonNav border-b-2  p-2 opacity-[50%] border-yellow-500                                          border-opacity-0 hover:border-opacity-100 hover:opacity-[100%] duration-200 cursor-pointer">
             <a href="" className="buttonNav text-black">Somos</a>

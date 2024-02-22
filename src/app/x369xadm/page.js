@@ -7,6 +7,25 @@ import { createPrenda, updatePrenda, getAllPrendas } from '../services/prendas';
 
 const AdminPage = () => {
   const [prendas, setPrendas] = useState([]);
+  const [editingEliminateIn, setEditingEliminateIn] = useState(null);
+
+  const handleEditEliminateIn = (prenda) => {
+    setEditingEliminateIn(prenda._id);
+  };
+
+  const handleUpdateEliminateIn = async (prendaId, newValue) => {
+    try {
+      await updatePrenda(prendaId, { eliminateIn: newValue });
+      // Recargar la lista de prendas después de actualizar
+      const data = await getAllPrendas();
+      setPrendas(data);
+      setEditingEliminateIn(null); // Reset editing state after successful update
+    } catch (error) {
+      console.error('Error al actualizar EliminateIn:', error);
+    }
+  };
+
+
 
   useEffect(() => {
     // Cargar todas las prendas al montar la página
@@ -68,6 +87,9 @@ const AdminPage = () => {
               <th className="border p-2">Época</th>
               <th className="border p-2">Talles</th>
               <th className="border p-2">Imágenes</th>
+              <th className="border p-2">EliminateIn</th>
+              
+
               <th className="border p-2">Acciones</th>
             </tr>
           </thead>
@@ -95,8 +117,27 @@ const AdminPage = () => {
                     </div>
                   ))}
                 </td>
+
                 <td className="border p-2">
-                  <button onClick={() => handleUpdatePrenda(prenda)} className="bg-blue-500 text-white px-3 py-1 rounded-md">Editar</button>
+              {editingEliminateIn === prenda._id ? (
+                <div>
+                  <input
+                    type="text"
+                    value={prenda.eliminateIn}
+                    onChange={(e) => handleUpdateEliminateIn(prenda._id, e.target.value)}
+                  />
+                </div>
+              ) : (
+                <div>{prenda.eliminateIn}</div>
+              )}
+            </td>
+
+
+                <td className="border p-2">
+                 <button
+                onClick={() => handleEditEliminateIn(prenda)}
+                className="bg-blue-500 text-white px-3 py-1 rounded-md"
+              >Editar</button>
                 </td>
               </tr>
             ))}

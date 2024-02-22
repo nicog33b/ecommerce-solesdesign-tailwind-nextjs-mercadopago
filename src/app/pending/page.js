@@ -1,7 +1,12 @@
 'use client'
 import React, { useEffect } from 'react';
+import { clearCredentials } from '../services/cart';
 
 const Pending = () => {
+  useEffect(() => {
+ clearCredentials();
+  }, []); 
+
   
     const RedirectToWhatsApp = () => {
         // Número de teléfono al que se redireccionará en formato internacional para Uruguay

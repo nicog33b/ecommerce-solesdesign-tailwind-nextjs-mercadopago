@@ -5,8 +5,8 @@ import { getAllPrendas } from '@/app/services/prendas';
 const ProductGrid = ({ selectedEpoca, search }) => {
   const [prendas, setPrendas] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [visibleItems, setVisibleItems] = useState(4);
-  const itemsToLoad = 4;
+  const [visibleItems, setVisibleItems] = useState(6);
+  const itemsToLoad = 6;
 
   useEffect(() => {
     const fetchPrendas = async () => {

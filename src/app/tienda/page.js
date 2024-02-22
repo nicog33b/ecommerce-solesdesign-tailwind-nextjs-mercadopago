@@ -1,13 +1,19 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import FiltroShop from '../components/tienda/filtroShop';
-import TitleShop from '../components/tienda/titleShop';
+import FiltroShop from '../components/tienda/FiltroShop';
+import TitleShop from '../components/tienda/TitleShop';
 import ProductGrid from '../components/tienda/GridProduct';
+
+import { clearCredentials } from '../services/cart';
 
 const Tienda = () => {
   // Estado local para mantener los filtros seleccionados
   const [epoca, setEpoca] = useState('Todos');
   const [searchText, setSearchText] = useState('');
+
+  useEffect(() => {
+    clearCredentials();
+     }, []); 
 
   useEffect(() => {
     // Log the initial value of selectedEpoca

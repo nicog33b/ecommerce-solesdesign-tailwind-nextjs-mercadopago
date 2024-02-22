@@ -8,7 +8,7 @@ const Logo = () => {
           S
         </div>
         <div className="text-black text-lg flex hover:text-yellow-400">
-          {["O", "L", "E", "S"].map((letter, index) => (
+          {["o", "l", "e", "s"].map((letter, index) => (
             <span
               key={index}
               className="text-black text-xl font-semibold hover:text-yellow-500 transition duration-300 transform hover:scale-110"
@@ -17,7 +17,7 @@ const Logo = () => {
             </span>
           ))}
           <span className="text-black text-xl font-semibold hover:text-yellow-500 transition duration-300 transform hover:scale-110">
-            DESIGN
+            design
           </span>
           <GiAmpleDress className="text-black hover:text-yellow-500 transition duration-300 transform hover:scale-110" />
         </div>

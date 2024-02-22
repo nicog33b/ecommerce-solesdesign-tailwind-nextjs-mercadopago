@@ -78,3 +78,23 @@ export const deletePrenda = async (id) => {
   return handleResponse(response);
 };
 
+
+
+// Función para actualizar el campo 'eliminateIn'
+export const updateEliminateIn = async (id, newEliminateIn) => {
+  const prenda = await getPrendaById(id);
+  if (prenda) {
+    if (newEliminateIn > 1) {
+      // Si eliminateIn es mayor que 1, restar 1 y actualizar la prenda
+      const updatedPrenda = { ...prenda, eliminateIn: newEliminateIn - 1 };
+      await updatePrenda(id, updatedPrenda);
+      return updatedPrenda;
+    } else {
+      // Si eliminateIn es 1 o menos, eliminar la prenda
+      await deletePrenda(id);
+      return null; // No hay prenda para devolver ya que fue eliminada
+    }
+  } else {
+    throw new Error(`Prenda con ID ${id} no encontrada.`);
+  }
+};

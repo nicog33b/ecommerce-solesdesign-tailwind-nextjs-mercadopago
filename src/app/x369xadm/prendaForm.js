@@ -37,7 +37,6 @@ const PrendaForm = ({ onSubmit, initialValues }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(prenda);
-   
   };
 
 
@@ -136,6 +135,19 @@ const PrendaForm = ({ onSubmit, initialValues }) => {
           onChange={handleChange}
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
           placeholder="Ingrese la descripción de la prenda"
+        />
+      </div>
+
+      <div className="mb-4">
+        <label htmlFor="eliminateIn" className="block text-gray-700 text-sm font-bold mb-2">Eliminar en</label>
+        <input
+          type="number"
+          id="eliminateIn"
+          name="eliminateIn"
+          value={prenda.eliminateIn || ''}
+          onChange={handleChange}
+          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
+          placeholder="Número para eliminar"
         />
       </div>
 
