@@ -151,6 +151,49 @@ const PrendaForm = ({ onSubmit, initialValues }) => {
         />
       </div>
 
+<div className="mb-4">
+  <label htmlFor="cuidados" className="block text-gray-700 text-sm font-bold mb-2">Cuidados</label>
+  <textarea
+    id="cuidados"
+    name="cuidados"
+    value={prenda.cuidados || ''}
+    onChange={handleChange}
+    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
+    placeholder="Ingrese los cuidados de la prenda"
+  />
+</div>
+
+<div className="mb-4">
+<input
+  type="text"
+  id="contornoDePecho"
+  name="contornoDePecho"
+  value={prenda.contornoDePecho || ''}
+  onChange={handleChange}
+  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
+  placeholder="Contorno de Pecho"
+/>
+
+<input
+  type="text"
+  id="largo"
+  name="largo"
+  value={prenda.largo || ''}
+  onChange={handleChange}
+  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
+  placeholder="Largo"
+/>
+
+<input
+  type="text"
+  id="manga"
+  name="manga"
+  value={prenda.manga || ''}
+  onChange={handleChange}
+  className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500 text-black"
+  placeholder="Manga"
+/>
+</div>
       <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded-md">Guardar Prenda</button>
     </form>
   );

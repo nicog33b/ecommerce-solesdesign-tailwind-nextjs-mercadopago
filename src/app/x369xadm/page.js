@@ -1,6 +1,4 @@
-'use client';
-
-
+'use client'
 import { useEffect, useState } from 'react';
 import PrendaForm from './prendaForm';
 import { createPrenda, updatePrenda, getAllPrendas } from '../services/prendas';
@@ -24,8 +22,6 @@ const AdminPage = () => {
       console.error('Error al actualizar EliminateIn:', error);
     }
   };
-
-
 
   useEffect(() => {
     // Cargar todas las prendas al montar la página
@@ -63,21 +59,27 @@ const AdminPage = () => {
     }
   };
 
-
-
-
   return (
     <div className="container mx-auto my-8">
       <h1 className="text-2xl font-bold mb-4 text-center">Administrar Prendas</h1>
       <PrendaForm onSubmit={handleCreatePrenda} />
-      
+
+      <section id='ordenDeProductReview' className='bg-gray-900 mt-3 mb-3 py-2 px-2'>
+        <h3 className='text-center'></h3>
+        <p className='text-white text-center'>MATERIAL</p>
+        <p className='text-white text-center'>TIPO</p>
+        <p className='text-white text-center'>EPOCA</p>
+        <p className='text-white text-center'>CUIDADOS</p>
+        <p className='text-white text-center'>MEDIDAS</p> {/* Añadido el título para medidas */}
+      </section>
+
       {/* Mostrar la lista de prendas en una tabla */}
       <div className="mt-8">
         <h2 className="text-xl font-bold mb-4">Todas las Prendas</h2>
         <table className="border-collapse w-full">
           <thead>
             <tr>
-            <th className="border p-2">ID</th>
+              <th className="border p-2">ID</th>
               <th className="border p-2">Nombre</th>
               <th className="border p-2">Precio</th>
               <th className="border p-2">Material</th>
@@ -88,8 +90,8 @@ const AdminPage = () => {
               <th className="border p-2">Talles</th>
               <th className="border p-2">Imágenes</th>
               <th className="border p-2">EliminateIn</th>
-              
-
+              <th className="border p-2">Cuidados</th> {/* Nuevo título para cuidados */}
+              <th className="border p-2">Medidas</th> {/* Nuevo título para medidas */}
               <th className="border p-2">Acciones</th>
             </tr>
           </thead>
@@ -119,25 +121,36 @@ const AdminPage = () => {
                 </td>
 
                 <td className="border p-2">
-              {editingEliminateIn === prenda._id ? (
-                <div>
-                  <input
-                    type="text"
-                    value={prenda.eliminateIn}
-                    onChange={(e) => handleUpdateEliminateIn(prenda._id, e.target.value)}
-                  />
-                </div>
-              ) : (
-                <div>{prenda.eliminateIn}</div>
-              )}
-            </td>
+                  {editingEliminateIn === prenda._id ? (
+                    <div>
+                      <input
+                        type="text"
+                        value={prenda.eliminateIn}
+                        onChange={(e) => handleUpdateEliminateIn(prenda._id, e.target.value)}
+                      />
+                    </div>
+                  ) : (
+                    <div>{prenda.eliminateIn}</div>
+                  )}
+                </td>
 
+                <td className="border p-2">{prenda.cuidados}</td> {/* Añadido campo de cuidados */}
+                {prenda.medidas && (
+  <td className="border p-2">
+    {/* Añadido campo de medidas */}
+    <p>Contorno de Pecho: {prenda.medidas.contornoDePecho}</p>
+    <p>Largo: {prenda.medidas.largo}</p>
+    <p>Manga: {prenda.medidas.manga}</p>
+  </td>
+)}
 
                 <td className="border p-2">
-                 <button
-                onClick={() => handleEditEliminateIn(prenda)}
-                className="bg-blue-500 text-white px-3 py-1 rounded-md"
-              >Editar</button>
+                  <button
+                    onClick={() => handleEditEliminateIn(prenda)}
+                    className="bg-blue-500 text-white px-3 py-1 rounded-md"
+                  >
+                    Editar
+                  </button>
                 </td>
               </tr>
             ))}

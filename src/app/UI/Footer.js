@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, {useEffect} from "react";
 import Logo from "./logo";
 import { useRouter } from "next/router";
@@ -39,25 +40,30 @@ Diseños con Identidad.</p>
                 </div>
             </div>
             <div className="flex flex-col">
-                <div className="flex mt-24 mb-12 flex-row justify-between z-[1]">
+                <div className="flex mt-24 mb-12 flex-row justify-between z-[1] ">
                   <Logo></Logo>
                     
                     <div className="flex flex-row space-x-8 items-center justify-between">
                         <a href="https://www.instagram.com/solesdesign_uy?igsh=Ymo4cHh5MHJrbjZw">
-                           <FaInstagram className="text-yellow-600 hover:text-yellow-400"> </FaInstagram>
+                           <FaInstagram className="text-yellow-600 hover:text-yellow-400 cursor-pointer"> </FaInstagram>
                         </a>
                        
-                           <FaWhatsapp onClick={RedirectToWhatsApp} className="h-4 w-4 text-green-600 hover:text-green-400"></FaWhatsapp>
+                           <FaWhatsapp onClick={RedirectToWhatsApp} className="h-4 w-4 text-green-600 hover:text-green-400 cursor-pointer"></FaWhatsapp>
                     
                         <a href="https://www.facebook.com/Tiendasoles.uy?mibextid=ZbWKwL">
-                         <FaFacebook  className="h-4 w-4 text-blue-400 hover:text-blue-200"></FaFacebook>
+                         <FaFacebook  className="h-4 w-4 text-blue-400 hover:text-blue-200 cursor-pointer"></FaFacebook>
                         </a>
                    
                     </div>
                 </div>
                 <hr className="text-white mb-6" ></hr>
    
-                <p className="w-full text-center my-12 text-gray-600">Copyright © 2024 @Solesdesign</p>
+                <p className="w-full text-center mt-6 text-gray-600  mx-auto">Copyright © 2024 @Solesdesign</p>
+                <p className="w-full text-center px-1 py-2 text-blue-300 opacity-45 text-sm my-auto">
+  <Link href='https://www.tuwebcuantica.com' passHref={true}>
+Clickea para crear tu propia web.
+  </Link>
+</p>
             </div>
         </div>
     </div>

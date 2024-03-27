@@ -6,6 +6,7 @@ import MessageTopM from './UI/mobile/messageTopM'
 import Navbar from './UI/Navbar'
 import NavbarM from './UI/mobile/navbarM'
 import Footer from './UI/Footer'
+import Head from 'next/head';
 
 
 export const metadata = {
@@ -38,7 +39,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html >
-      
+      <Head>
+      <meta name="google-site-verification" content="gNsX7IugdRPLuJN-fOZK5mGfFFuwAYRueo6CIR8pgYU" />
+      </Head>
       <body className='bg-black'>
         <MessageTopM></MessageTopM>
     

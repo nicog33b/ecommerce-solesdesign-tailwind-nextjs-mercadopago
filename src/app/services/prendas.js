@@ -41,7 +41,7 @@ export const getPrendaById = async (id) => {
 // Obtener todas las prendas de Primavera-Verano
 export const getPrimaveraVeranoPrendas = async () => {
   const allPrendas = await getAllPrendas();
-  const primaveraVeranoPrendas = allPrendas.filter(prenda => prenda.epoca === 'Primavera-Verano');
+  const primaveraVeranoPrendas = allPrendas.filter(prenda => prenda.epoca === 'Otoño-Invierno');
   return primaveraVeranoPrendas;
 };
 

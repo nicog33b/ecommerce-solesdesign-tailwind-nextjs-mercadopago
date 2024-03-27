@@ -1,22 +1,11 @@
-
-//fundamental
 'use client';
 import React, { useEffect, useState } from 'react';
-
-//icons
 import { FaTruck, FaRecycle, FaShoppingBag } from 'react-icons/fa';
-
-//estilizacion
-import Swal from 'sweetalert2'
-
-//components
+import Swal from 'sweetalert2';
 import QuantitySelector from '../components/productReview/quantity';
-
-//extern function
 import { getPrendaById } from '../services/prendas';
 import { addItemToCart, clearCredentials } from '../services/cart';
 import { createCartIfNotExists } from '../services/cart';
-
 
 const ProductReview = () => {
   const [productDetails, setProductDetails] = useState({
@@ -27,16 +16,15 @@ const ProductReview = () => {
     material: '',
     tipo: '',
     imagenes: {},
+    cuidados: '', // Agregamos cuidados de la prenda
   });
 
+  
   const [cantidad, setCantidad] = useState(1);
-
   const selectedId = typeof window !== 'undefined' ? localStorage.getItem('selectedId') : null;
-
 
   useEffect(() => {
     clearCredentials();
-
     getPrendaById(selectedId)
       .then(itemDetails => {
         setProductDetails(itemDetails);
@@ -49,8 +37,7 @@ const ProductReview = () => {
   const addToCart = () => {
     createCartIfNotExists();
     const storedCart = localStorage.getItem('userCart');
-  
-    // Check if the item is already in the cart
+
     if (storedCart && storedCart.includes(selectedId)) {
       Swal.fire({
         icon: 'info',
@@ -60,10 +47,9 @@ const ProductReview = () => {
         cancelButtonText: 'Seguir comprando',
       }).then((result) => {
         if (result.isConfirmed) {
-          // Redirige a /checkout
           window.location.href = '/checkout';
-        }else{
-          window.location.href ='/tienda'
+        } else {
+          window.location.href = '/tienda';
         }
       });
     } else {
@@ -76,23 +62,20 @@ const ProductReview = () => {
         cancelButtonText: 'Seguir comprando',
       }).then((result) => {
         if (result.isConfirmed) {
-          // Redirige a /checkout
           window.location.href = '/checkout';
         } else {
-          // Redirige a /tienda
           window.location.href = '/tienda';
         }
       });
     }
   };
-  
 
   const updateQuantity = (newQuantity) => {
     setCantidad(newQuantity);
   };
 
   return (
-    <div className="bg-gradient-to-r from-black to-yellow-500 lg:py-8 mb-12">
+    <div className="bg-gradient-to-r from-black to-gray-900 lg:py-8 mb-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4 order-2 md:order-1 text-white">
@@ -105,43 +88,63 @@ const ProductReview = () => {
                 {productDetails.precio}
               </span>
               <div className="flex items-start mt-4">
-              <QuantitySelector updateQuantity={updateQuantity}/>               
+                <QuantitySelector updateQuantity={updateQuantity} />
               </div>
               <button
-                  onClick={addToCart}
-                  className="w-5/12 bg-green-600 text-black rounded-full font-bold hover:text-white hover:bg-black ml-2 px-3 py-3 text-center mt-3 "
-                >
-                  Agregar al carrito
-                </button>
+                onClick={addToCart}
+                className="w-5/12 bg-green-600 text-black rounded-full font-bold hover:text-white hover:bg-black ml-2 px-3 py-3 text-center mt-3 "
+              >
+                Agregar al carrito
+              </button>
             </div>
-            <div className="mb-6">
-              <p className="font-bold text-gray-300">Talles disponibles:</p>
-              <div className="flex items-center mt-2 space-x-2">
-                {productDetails.talles.map(talle => (
-                  <button
-                    key={talle._id}
-                    className="bg-gray-400 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-500"
-                  >
-                    {talle.talle}
-                  </button>
-                ))}
+            {productDetails.talles.length > 0 && (
+              <div className="mb-6">
+                <p className="font-bold text-gray-300">Talles disponibles:</p>
+                <div className="flex items-center mt-2 space-x-2">
+                  {productDetails.talles.map(talle => (
+                    <button
+                      key={talle._id}
+                      className="bg-gray-400 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-500"
+                    >
+                      {talle.talle}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
             <div className="mb-8">
               <p className="text-gray-300 text-lg mt-2">
-                {productDetails.material}
+                <p className='font-serif mb-1'>{productDetails.material}</p>
                 <br />
-                {productDetails.epoca}
+                <p className='font-serif mb-1'>{productDetails.epoca}</p>
                 <br />
-                {productDetails.tipo}
+                <p className='font-serif '>{productDetails.tipo}</p>
               </p>
             </div>
-            <div className="flex items-center mb-6 space-x-4">
-              <FaTruck className="text-4xl" />
-              <FaRecycle className="text-4xl" />
-              <FaShoppingBag className="text-4xl" />
+          
+            <div className="bg-gray-50 p-4 rounded-lg">
+  <h3 className="text-lg font-bold mb-2 text-red-300">Cuidados:</h3>
+  <p className='text-black' dangerouslySetInnerHTML={{ __html: productDetails.cuidados }}></p>
+</div>
+
+<div className="bg-gray-50 p-4 rounded-lg mt-8">
+            <h3 className="text-lg font-bold mb-2 text-red-300">Medidas unicas</h3>
+            <div className="flex flex-wrap">
+              <div className="w-1/3 p-4">
+                <h4 className="text-sm font-serif mb-2 text-black">Pecho:</h4>
+                <p className="text-gray-600">{productDetails.contornoDePecho}</p>
+              </div>
+              <div className="w-1/3 p-4">
+                <h4 className="text-sm font-serif mb-2 text-black">Largo:</h4>
+                <p className="text-gray-600">{productDetails.largo}</p>
+              </div>
+              <div className="w-1/3 p-4">
+                <h4 className="text-sm font-serif mb-2 text-black">Manga:</h4>
+                <p className="text-gray-600">{productDetails.manga}</p>
+              </div>
             </div>
-            
+          </div>
+
           </div>
           <div className="md:flex-1 px-4 order-1 md:order-2">
             <div className="h-[460px] rounded-lg overflow-hidden mb-8">
@@ -151,11 +154,8 @@ const ProductReview = () => {
                 alt="Product Image"
               />
             </div>
-       
           </div>
-
         </div>
-
       </div>
     </div>
   );

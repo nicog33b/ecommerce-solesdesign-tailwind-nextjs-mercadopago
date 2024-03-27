@@ -16,8 +16,6 @@ const Tienda = () => {
      }, []); 
 
   useEffect(() => {
-    // Log the initial value of selectedEpoca
-    console.log('Initial selectedEpoca:', epoca);
   }, [epoca]);
   // Función para manejar cambios en los filtros
   const handleEpocaChange = (nuevaEpoca) => {
@@ -30,10 +28,11 @@ const Tienda = () => {
 
   return (
     <div className=''>
+
+
+
       {/* Paso de estado y función de cambio a FiltroShop */}
       <FiltroShop onFiltroChange={handleEpocaChange} searchTextChange={handleSearchTextChange} />
-
-      <TitleShop />
 
       {/* Paso de filtros a ProductGrid */}
       <ProductGrid  selectedEpoca={epoca} search={searchText} />
