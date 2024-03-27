@@ -1,5 +1,5 @@
 'use client';
-// components/ComprasTable.js
+// components/ComprasTable.jss
 import React, { useState, useEffect } from 'react';
 import { getAllCompras, deleteCompra } from '../services/registro';
 import { getPrendaById } from '../services/prendas';

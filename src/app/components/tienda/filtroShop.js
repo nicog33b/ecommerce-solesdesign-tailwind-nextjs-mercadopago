@@ -19,7 +19,7 @@ const FiltroShop = ({ onFiltroChange, searchTextChange }) => {
         // Establecer las épocas en el estado
         setEpocas(uniqueEpocas);
         //Establecer la epoca que la tienda carga como predeterminada.
-        setSelectedEpoca('Otoño-Invierno');
+        setSelectedEpoca('Otoño-Invierno');g
         onFiltroChange('Otoño-Invierno');
       } catch (error) {
         console.error('Error fetching prendas:', error);
