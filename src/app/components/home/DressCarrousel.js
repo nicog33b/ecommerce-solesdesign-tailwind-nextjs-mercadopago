@@ -60,7 +60,7 @@ const DressCarrousel = () => {
   };
 
   return (
-    <div className="rounded mt-9">
+    <div className="rounded ">
       {prendas.length === 0 ? (
         <Spinner />
       ) : (

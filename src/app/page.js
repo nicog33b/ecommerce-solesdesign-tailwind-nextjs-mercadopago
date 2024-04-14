@@ -16,12 +16,12 @@ export default function Home() {
      
   return (
     
-   <div className="bg-black mt-3 mb-6"> 
+   <div className="bg-white"> 
    
    <HomeCarousel></HomeCarousel>
     <DressCarrousel></DressCarrousel>
     <ShopNowButton></ShopNowButton>
-    <hr className="bg-black mb-6" ></hr>
+
    </div>
 
 

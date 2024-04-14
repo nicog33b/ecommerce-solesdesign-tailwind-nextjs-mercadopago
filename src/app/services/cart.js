@@ -56,48 +56,30 @@ export const cartUpDataAndCheckout = () => {
 
 
   export const addItemToCart = (_id, precio, nombre, material, precioAntes, imagenes, cantidad) => {
-       // Obtener el carrito del localStorage
-       const storedCart = localStorage.getItem('userCart');
-    // Crear un objeto con los datos proporcionados
-    const newItem = {
-      _id,
-      precio,
-      cantidad,
-      nombre,
-      material,
-      precioAntes,
-      imagenes,
-    };
-  
-
+    const storedCart = localStorage.getItem('userCart');
+    const parsedCart = storedCart ? JSON.parse(storedCart) : [];
     
-      // Parsear el carrito almacenado como JSON
-      const parsedCart = JSON.parse(storedCart);
-      
-      // Agregar el nuevo elemento al carrito
-      parsedCart.push(newItem);
+    const newItem = { _id, precio, cantidad, nombre, material, precioAntes, imagenes };
+    parsedCart.push(newItem);
+    
+    localStorage.setItem('userCart', JSON.stringify(parsedCart));
+    
+    // Disparar un evento personalizado para indicar que el carrito ha sido actualizado
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
+  };
   
-      // Actualizar el localStorage con el carrito actualizado
+  export const handleRemoveClick = (_id) => {
+    const storedCart = localStorage.getItem('userCart');
+    const parsedCart = JSON.parse(storedCart);
+    
+    const itemIndex = parsedCart.findIndex(item => item._id === _id);
+    if (itemIndex !== -1) {
+      parsedCart.splice(itemIndex, 1);
       localStorage.setItem('userCart', JSON.stringify(parsedCart));
       
+      // Disparar un evento personalizado para indicar que el carrito ha sido actualizado
+      window.dispatchEvent(new CustomEvent('cartUpdated'));
+    }
   };
-
-
-  export const handleRemoveClick = (_id) => {
-       // Obtener el carrito del localStorage
-       const storedCart = localStorage.getItem('userCart');
-   // Parsear el carrito almacenado como JSON
-   const parsedCart = JSON.parse(storedCart);
-    
-   // Buscar el índice del elemento con el _id proporcionado
-   const itemIndex = parsedCart.findIndex(item => item._id === _id);
-   
-   if (itemIndex !== -1) {
-     // Eliminar el elemento del carrito usando splice
-     parsedCart.splice(itemIndex, 1);
-     
-     // Actualizar el localStorage con el carrito modificado
-     localStorage.setItem('userCart', JSON.stringify(parsedCart));
-  };
-};
+  
 

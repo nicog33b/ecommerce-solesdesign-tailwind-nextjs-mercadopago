@@ -1,13 +1,11 @@
 
 import './globals.css'
-
-import MessageTop from './UI/messageTop'
-import MessageTopM from './UI/mobile/messageTopM'
-import Navbar from './UI/Navbar'
-import NavbarM from './UI/mobile/navbarM'
-import Footer from './UI/Footer'
 import Head from 'next/head';
 
+
+// Componentes
+import Navbar from './UI/Navbar';
+import Footer from './UI/Footer';
 
 export const metadata = {
   title: 'Solesdesign | Moda Única y Hecha a Mano',
@@ -27,31 +25,23 @@ export const metadata = {
     url: 'https://www.solesdesign.store',
     siteName: 'Solesdesign',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuX8cO41QDGwJuXhUNtZtqk9dCeI5Y4mwdhNMPPCBgZQ&s',
-    locale: 'es_UY', // Código de idioma y país (ejemplo: es_UY para español de Uruguay)
+    locale: 'es_UY',
   },
 };
 
-
-
 export default function RootLayout({ children }) {
-
-
-
   return (
-    <html >
+    <html>
       <Head>
-      <meta name="google-site-verification" content="gNsX7IugdRPLuJN-fOZK5mGfFFuwAYRueo6CIR8pgYU" />
+        <meta name="google-site-verification" content="gNsX7IugdRPLuJN-fOZK5mGfFFuwAYRueo6CIR8pgYU" />
       </Head>
-      <body className='bg-black'>
-        <MessageTopM></MessageTopM>
     
-     <Navbar></Navbar>
-      
-        {children}
-        <Footer/>
+        <body className='bg-white'>
+          <Navbar></Navbar>
+          {children}
+          <Footer/>
         </body>
 
-
     </html>
-  )
+  );
 };

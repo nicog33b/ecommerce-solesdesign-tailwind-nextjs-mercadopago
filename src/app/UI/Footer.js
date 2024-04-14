@@ -1,9 +1,11 @@
+
 "use client";
 import Link from "next/link";
 import React, {useEffect} from "react";
 import Logo from "./logo";
 import { useRouter } from "next/router";
 
+import Image from 'next/image'
 import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
@@ -27,8 +29,8 @@ const Footer = () =>{
 
     return(
     
-        <div className="w-full min-h-screen flex items-center justify-center bg-black">
-        <div className="md:w-2/3 w-full px-4 text-white flex flex-col">
+        <div className="w-full min-h-screen flex items-center justify-center bg-white">
+        <div className="md:w-2/3 w-full px-4 text-black flex flex-col">
             <div className="w-full text-7xl font-bold">
                 <h5 className="w-full md:w-2/3">Compra tu prenda hecha a mano!</h5>
             </div>
@@ -41,8 +43,10 @@ Diseños con Identidad.</p>
             </div>
             <div className="flex flex-col">
                 <div className="flex mt-24 mb-12 flex-row justify-between z-[1] ">
-                  <Logo></Logo>
-                    
+                <div className="logo">
+        <Image src='/logoultimate.jpeg' alt="Logo" width={120} height={120} />
+      </div>
+
                     <div className="flex flex-row space-x-8 items-center justify-between">
                         <a href="https://www.instagram.com/solesdesign_uy?igsh=Ymo4cHh5MHJrbjZw">
                            <FaInstagram className="text-yellow-600 hover:text-yellow-400 cursor-pointer"> </FaInstagram>

@@ -41,7 +41,7 @@ const ImprovedProductCard = ({ prenda }) => {
   };
 
   return (
-    <div className="mx-2 my-4 overflow-hidden bg-white rounded-lg shadow-md transition-transform transform hover:scale-105">
+    <div className=" overflow-hidden bg-white rounded-lg shadow-md transition-transform transform hover:scale-105">
       <div
         className={`relative overflow-hidden ${isHovered ? 'hovered' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
