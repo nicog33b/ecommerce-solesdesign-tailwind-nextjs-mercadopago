@@ -75,19 +75,19 @@ const ProductReview = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-black to-gray-900 lg:py-8 mb-12">
+    <div className="bg-white lg:py-8 mb-12 text-black">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row -mx-4">
           <div className="md:flex-1 px-4 order-2 md:order-1 text-white">
-            <h2 className="text-4xl font-extrabold mb-4 mt-8">
+            <h2 className="text-4xl font-extrabold mb-4 mt-8 text-black">
               {productDetails.nombre}
             </h2>
             <div className="mb-6">
-              <span className="text-4xl font-serif">
+              <span className="text-4xl font-serif text-black">
                 <span className="text-green-500 mr-2">$</span>
                 {productDetails.precio}
               </span>
-              <div className="flex items-start mt-4">
+              <div className="flex items-start mt-4 text-black">
                 <QuantitySelector updateQuantity={updateQuantity} />
               </div>
               <button
@@ -100,7 +100,7 @@ const ProductReview = () => {
             {productDetails.talles.length > 0 && (
               <div className="mb-6">
                 <p className="font-bold text-gray-300">Talles disponibles:</p>
-                <div className="flex items-center mt-2 space-x-2">
+                <div className="flex items-center mt-2 space-x-2 text-black">
                   {productDetails.talles.map(talle => (
                     <button
                       key={talle._id}
@@ -114,11 +114,11 @@ const ProductReview = () => {
             )}
             <div className="mb-8">
               <p className="text-gray-300 text-lg mt-2">
-                <p className='font-serif mb-1'>{productDetails.material}</p>
+                <p className='font-serif mb-1 text-black'>{productDetails.material}</p>
                 <br />
-                <p className='font-serif mb-1'>{productDetails.epoca}</p>
+                <p className='font-serif mb-1 text-black'>{productDetails.epoca}</p>
                 <br />
-                <p className='font-serif '>{productDetails.tipo}</p>
+                <p className='font-serif text-black'>{productDetails.tipo}</p>
               </p>
             </div>
           

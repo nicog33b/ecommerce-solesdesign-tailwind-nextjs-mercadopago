@@ -38,7 +38,7 @@ const Navbar = () => {
     <header className="header sticky top-0 bg-gradient-radial from-black to-zinc-950 shadow-md flex items-center justify-between px-8 z-10 mb-3">
       {/* LOGO */}
       <div className="mr-3 mb-3">
-        <Image src='/logoultimate.jpeg' alt="Logo" width={60} height={60} />
+        <Image src='/ultimateLogo.jpg' alt="Logo" width={600} height={600} className="object-cover h-[6rem] w-[6rem] rounded-full pt-1" />
       </div>
 
       {/* NAVIGATION */}
