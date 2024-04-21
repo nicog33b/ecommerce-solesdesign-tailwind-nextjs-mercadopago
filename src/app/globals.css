@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200&display=swap');
+
+/*QUICKSAND regular 400 botones del nav*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+.colorPrincipal{background-color: #000000;};
+.colorText{color:#ffffff};
+.messageTopFont{font-family: 'Assistant', sans-serif;};
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.roboto-font {
+    font-family: 'Roboto', sans-serif;
+  }
