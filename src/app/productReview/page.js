@@ -113,13 +113,13 @@ const ProductReview = () => {
               </div>
             )}
             <div className="mb-8">
-              <p className="text-gray-300 text-lg mt-2">
+              <div className="text-gray-300 text-lg mt-2">
                 <p className='font-serif mb-1 text-black'>{productDetails.material}</p>
                 <br />
                 <p className='font-serif mb-1 text-black'>{productDetails.epoca}</p>
                 <br />
                 <p className='font-serif text-black'>{productDetails.tipo}</p>
-              </p>
+              </div>
             </div>
           
             <div className="bg-gray-50 p-4 rounded-lg">
