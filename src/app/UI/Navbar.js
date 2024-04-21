@@ -38,17 +38,19 @@ const Navbar = () => {
     <header className="header sticky top-0 bg-gradient-radial from-black to-zinc-950 shadow-md flex items-center justify-between px-8 z-10 mb-3">
       {/* LOGO */}
       <div className="mr-3 mb-3">
-        <Image src='/ultimateLogo.jpg' alt="Logo" width={600} height={600} className="object-cover h-[6rem] w-[6rem] rounded-full pt-1" />
+        <Link href='/'>
+        <Image src='/ultimateLogo.jpg'  alt="Logo" width={600} height={600} className="object-cover h-[6rem] w-[6rem] rounded-full pt-1 cursor-pointer " />
+        </Link>
       </div>
 
       {/* NAVIGATION */}
       <nav className="nav flex font-semibold text-lg ml-2">
         <ul className="flex items-center">
           <li className="buttonNav border-b-2 p-2 opacity-80 border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-100 duration-200 cursor-pointer active">
-            <Link href="/" className="text-white">Inicio</Link>
+            <Link href="/" className="text-white roboto-font">Inicio</Link>
           </li>
           <li className="buttonNav border-b-2 p-2 opacity-80 border-yellow-500 border-opacity-0 hover:border-opacity-100 hover:opacity-100 duration-200 cursor-pointer">
-            <Link href="/tienda" className="text-white">Tienda</Link>
+            <Link href="/tienda" className="text-white roboto-font">Tienda</Link>
           </li>
         </ul>
       </nav>
