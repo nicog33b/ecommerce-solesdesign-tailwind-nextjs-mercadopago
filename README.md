@@ -48,14 +48,14 @@ Para ejecutar el proyecto localmente, sigue estos pasos:
 
 2. Instalar las dependencias:
    ```bash
-  npm install
+   npm install
   
 3. Buildear la app:
    ```bash
-  npm run build
+   npm run build
   
 4. Iniciar la app:
    ```bash
-  npm run start
+   npm run start
 
   
